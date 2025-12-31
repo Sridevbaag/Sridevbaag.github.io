@@ -7,73 +7,22 @@ Welcome to my personal portfolio website! This project showcases my skills, acad
 
 **Live Demo:** [Click Here to view](https://sridevbaag.github.io/)
 
-## ✨ Key Features
+## 🌐 Socials:
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/sridev_baag) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/sridev-bag) [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/sridev_baag) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:sridevbaag@gmail.com) 
 
-* **🎨 Modern UI/UX:** Clean, minimalist design using the "Poppins" font family.
-* **🌓 Dark/Light Mode:** Built-in theme toggle with local state persistence.
-* **📱 Fully Responsive:** Optimized for desktops, tablets, and mobile devices.
-* **📧 Functional Contact Form:** Integrated with **EmailJS** to send emails directly from the browser without a backend server.
-* **✨ Scroll Animations:** Smooth fade-in effects as you scroll down the page.
-* **📄 Resume Download:** Direct link to download my CV.
+# 💻 Tech Stack:
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=Sridevbaag&theme=dark&hide_border=false&include_all_commits=true&count_private=false)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=Sridevbaag&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Sridevbaag&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact)
 
-## 🛠️ Tech Stack
+## 🏆 GitHub Trophies
+![](https://github-profile-trophy.vercel.app/?username=Sridevbaag&theme=radical&no-frame=false&no-bg=false&margin-w=4)
 
-| Technology | Usage |
-| :--- | :--- |
-| **HTML5** | Semantic structure and layout |
-| **CSS3** | Styling, Flexbox, Grid, Variables, Animations |
-| **JavaScript** | DOM Manipulation, EmailJS logic, Theme Toggling |
-| **FontAwesome** | Icons for social links and UI elements |
-| **EmailJS** | API for handling contact form submissions |
+---
+[![](https://visitcount.itsvg.in/api?id=Sridevbaag&icon=0&color=0)](https://visitcount.itsvg.in)
 
-## 📂 File Structure
-
-```text
-├── assets/
-│   ├── images/        # Profile pictures and project screenshots
-│   ├── icons/         # Resume PDF
-├── index.html         # Main HTML structure
-├── style.css          # Global styles, themes, and media queries
-├── script.js          # Logic for theme, EmailJS, and animations
-└── README.md          # Project documentation
-```
-## ⚙️ Local Setup & Installation
-
-To run this project locally on your machine:
-
-1.  **Clone the repository**
-    ```bash
-    git clone [https://github.com/Sridevbaag/portfolio.git](https://github.com/Sridevbaag/portfolio.git)
-    ```
-2.  **Navigate to the project directory**
-    ```bash
-    cd portfolio
-    ```
-3.  **Open index.html**
-    Simply double-click `index.html` to open it in your browser, or use a Live Server extension in VS Code.
-
-## 🔧 Configuration (EmailJS)
-
-This portfolio uses **EmailJS** for the contact form. If you fork this repo, you need to update the credentials in `script.js`.
-
-1.  Create an account at [EmailJS.com](https://www.emailjs.com/).
-2.  Create a new **Email Service** (e.g., Gmail) and a **Contact Form Template**.
-3.  Open `script.js` and replace the following keys with your own:
-
-```javascript
-emailjs.init("YOUR_PUBLIC_KEY"); // Line 20
-// ...
-const serviceID = "YOUR_SERVICE_ID"; // Line 33
-const templateID = "YOUR_TEMPLATE_ID"; // Line 34
-```
-## 📸 Projects Showcased
-* **Student Result Management System:** A Java + SQL application for managing academic records with CRUD capabilities.
-
-## 📬 Contact Me
-Feel free to reach out if you want to collaborate or hire me!<br>
-**Email:** sridevbaag2@gmail.com<br>
-**LinkedIn:** [Sridev Bag](https://www.linkedin.com/in/sridev-bag/)<br>
-**GitHub:** [Sridevbaag](https://github.com/Sridevbaag)<br>
 
 
 <p align="center">© 2025 Sridev Bag | All Rights Reserved</p>
