@@ -3,161 +3,468 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sridev Bag | Portfolio</title>
+  <title>Sridev Bag — Developer Portfolio</title>
+  <meta name="description" content="Sridev Bag — BCA Student, Full Stack Developer, Chrome Extension Builder. Portfolio showcasing projects, skills and experience." />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <!-- JS -->
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header / Navbar -->
-  <header>
-    <div class="logo">Sridev<span>Bag</span></div>
-    <nav>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <span class="pre-bracket">{</span>
+      <span class="pre-text">SB</span>
+      <span class="pre-bracket">}</span>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- ── HEADER ── -->
+  <header id="header">
+    <a href="#home" class="logo">
+      <span class="logo-bracket">{</span>sridev<span class="logo-dot">.</span>bag<span class="logo-bracket">}</span>
+    </a>
+
+    <nav id="nav">
       <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home"       class="nav-link active"><span>01</span>Home</a></li>
+        <li><a href="#about"      class="nav-link"><span>02</span>About</a></li>
+        <li><a href="#experience" class="nav-link"><span>03</span>Experience</a></li>
+        <li><a href="#skills"     class="nav-link"><span>04</span>Skills</a></li>
+        <li><a href="#projects"   class="nav-link"><span>05</span>Projects</a></li>
+        <li><a href="#contact"    class="nav-link"><span>06</span>Contact</a></li>
       </ul>
     </nav>
-    <button id="theme-toggle" class="theme-btn">
-      <i class="fas fa-moon"></i>
-    </button>
+
+    <div class="header-right">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="menu-btn" class="icon-btn hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="content">
-      <img
-        src="assets/images/profile.jpg"
-        alt="Sridev Bag"
-        class="profile-pic"
-      />
-      <h1>Hi, I'm <span>Sridev Bag</span></h1>
-      <p>
-        A third-year BCA student passionate about
-        <strong>Software Development</strong> and
-        <strong>Database Management</strong>.
-      </p>
-      <a href="assets/Sridev_Bag_Resume.pdf" download class="btn"
-        >Download Resume</a
-      >
-    </div>
-  </section>
+  <!-- Mobile Nav Overlay -->
+  <div id="mobile-nav">
+    <button id="mobile-close" class="icon-btn"><i class="fas fa-times"></i></button>
+    <ul>
+      <li><a href="#home"       class="mob-link">Home</a></li>
+      <li><a href="#about"      class="mob-link">About</a></li>
+      <li><a href="#experience" class="mob-link">Experience</a></li>
+      <li><a href="#skills"     class="mob-link">Skills</a></li>
+      <li><a href="#projects"   class="mob-link">Projects</a></li>
+      <li><a href="#contact"    class="mob-link">Contact</a></li>
+    </ul>
+  </div>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      A third-year BCA student with a strong foundation in software development,
-      database management, and communication. Experienced in developing a
-      Student Result Management System using Java and SQL, demonstrating strong
-      problem-solving and attention to detail. Eager to apply technical
-      knowledge, documentation ability, and teamwork skills in a Support Intern
-      role to enhance the candidate experience and operational efficiency.
-    </p>
-  </section>
+  <main>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
-    <div class="skill-list">
-      <div class="skill">Java</div>
-      <div class="skill">SQL</div>
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">Oracle Database</div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-container">
-      <div class="project-card">
-        <h3>Number-Guessing-game</h3>
-        <p>
-          A beautiful number guessing game built with Flutter featuring difficulty levels, statistics tracking, and smooth animations.
-        </p>
-        <a
-          href="https://github.com/Sridevbaag/number-guessing-game"
-          target="_blank"
-          class="btn"
-          >View on GitHub</a
-        >
+    <!-- ── HERO ── -->
+    <section id="home" class="hero">
+      <!-- Floating code blobs -->
+      <div class="code-bg" aria-hidden="true">
+        <span class="code-float" style="--d:0s;--x:5%;--y:15%">const dev = "Sridev";</span>
+        <span class="code-float" style="--d:2s;--x:72%;--y:8%">import skills from './life';</span>
+        <span class="code-float" style="--d:4s;--x:85%;--y:55%">git push origin main</span>
+        <span class="code-float" style="--d:1s;--x:10%;--y:78%">while(learning) { grow(); }</span>
+        <span class="code-float" style="--d:3s;--x:60%;--y:82%">npm run build-career</span>
+        <span class="code-float" style="--d:5s;--x:40%;--y:5%">// TODO: graduate 2027</span>
       </div>
-      <div class="project-card">
-        <h3>WordEase-chrome-extension</h3>
-        <p>
-          Instant text translation Chrome Extension — select any word on any webpage and get a glassmorphism popup with translation, TTS, history & more. Built with Manifest V3, supports 20 languages.
-        </p>
-        <a
-          href="https://github.com/Sridevbaag/WordEase-chrome-extension"
-          target="_blank"
-          class="btn"
-          >View on GitHub</a
-        >
+
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-greeting">
+            <span class="terminal-cursor"></span> Hello, world!
+          </p>
+          <h1 class="hero-name">
+            I'm <span class="name-highlight">Sridev Bag</span>
+          </h1>
+          <div class="hero-role">
+            <span class="role-prefix">I build </span>
+            <span id="typed-text" class="typed-word"></span>
+            <span class="typed-cursor">|</span>
+          </div>
+          <p class="hero-desc">
+            BCA student at Sister Nivedita University, Kolkata — crafting web tools,
+            Android apps, and Chrome extensions that solve real problems.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn-primary">
+              View Projects <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="assets/Sridev_Bag_Resume.pdf" download class="btn-outline">
+              <i class="fas fa-download"></i> Resume
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="img-ring">
+            <img src="assets/images/profile.jpg" alt="Sridev Bag" class="profile-pic" />
+          </div>
+          <div class="status-badge">
+            <span class="status-dot"></span> Open to opportunities
+          </div>
+        </div>
       </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </section>
 
-    <div class="contact-links">
-      <a href="mailto:sridevbaag2@gmail.com" class="email"
-        ><i class="fas fa-envelope"></i
-      ></a>
-      <a href="https://github.com/Sridevbaag" target="_blank" class="github"
-        ><i class="fab fa-github"></i
-      ></a>
-      <a
-        href="https://www.linkedin.com/in/sridev-bag"
-        target="_blank"
-        class="linkedin"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-    </div>
+    <!-- ── ABOUT ── -->
+    <section id="about" class="section reveal">
+      <div class="section-header">
+        <span class="section-tag">02 — About</span>
+        <h2>Who am I?</h2>
+      </div>
 
-    <form class="contact-form" id="contact-form">
-      <input type="text" id="user_name" placeholder="Your Name" required />
-      <input type="email" id="user_email" placeholder="Your Email" required />
-      <textarea
-        id="message"
-        rows="4"
-        placeholder="Your Message..."
-        required
-      ></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
-  <section id="about" class="about fade-in"> 
-  </section>
-  <section id="skills" class="skills fade-in">
-  </section>
-  <section id="projects" class="projects fade-in">
-  </section>
-  <section id="contact" class="contact fade-in">
-  </section>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a <strong>4th-year BCA student</strong> (2023–2027) passionate about building
+            things that live on the internet. I love turning ideas into working software —
+            from Android apps and Chrome extensions to full-stack web projects.
+          </p>
+          <p>
+            Currently doing a paid <strong>work-from-home internship</strong> at
+            RT Network Solutions Pvt. Ltd. as an Image Data Annotation &amp;
+            Prompt Engineering Intern, while actively growing toward
+            <strong>Full Stack Development</strong>.
+          </p>
+          <p>
+            When I'm not coding, you'll find me involved in theater, hiking,
+            gaming, or running my anime page <strong>OtakuVerse</strong>.
+          </p>
 
+          <div class="about-links">
+            <a href="https://github.com/Sridevbaag"        target="_blank" class="about-social"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sridev-bag" target="_blank" class="about-social"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:sridevbaag2@gmail.com"           class="about-social"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-box">
+            <span class="stat-num">6</span>
+            <span class="stat-label">Semesters<br>Completed</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">3+</span>
+            <span class="stat-label">Projects<br>Built</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">20</span>
+            <span class="stat-label">Languages<br>Supported</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">Things<br>to Learn</span>
+          </div>
+          <div class="currently-box">
+            <span class="cur-label"><i class="fas fa-code"></i> Currently learning</span>
+            <span class="cur-value">DSA in Java &amp; Full Stack</span>
+          </div>
+          <div class="currently-box">
+            <span class="cur-label"><i class="fas fa-map-marker-alt"></i> Based in</span>
+            <span class="cur-value">Newtown, Kolkata, India</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE ── -->
+    <section id="experience" class="section reveal">
+      <div class="section-header">
+        <span class="section-tag">03 — Experience</span>
+        <h2>Where I've worked</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <h3>Image Data Annotation &amp; Prompt Engineering Intern</h3>
+                <span class="tl-company">RT Network Solutions Pvt. Ltd.</span>
+              </div>
+              <span class="tl-badge">Paid · Remote</span>
+            </div>
+            <p class="tl-date"><i class="fas fa-calendar"></i> 2024 — Present</p>
+            <ul class="tl-points">
+              <li>Annotating image datasets using <strong>Ango iMerit</strong> across multiple workflow phases</li>
+              <li>Designing and refining prompts for AI model training and evaluation tasks</li>
+              <li>Collaborating in a remote-first workflow with structured quality review cycles</li>
+            </ul>
+            <div class="tl-tags">
+              <span>Ango iMerit</span>
+              <span>Prompt Engineering</span>
+              <span>Data Annotation</span>
+              <span>AI/ML</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-dot tl-edu"></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+                <span class="tl-company">Sister Nivedita University, Kolkata</span>
+              </div>
+              <span class="tl-badge tl-badge-edu">Education</span>
+            </div>
+            <p class="tl-date"><i class="fas fa-calendar"></i> 2023 — 2027</p>
+            <ul class="tl-points">
+              <li>Currently in Semester 6 — two semesters remaining</li>
+              <li>Coursework: Java, Python, DBMS, Computer Networks, Android Development</li>
+              <li>Built academic projects in Java, Kotlin, and Python</li>
+            </ul>
+            <div class="tl-tags">
+              <span>Java</span><span>Python</span><span>DBMS</span><span>Android</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills" class="section reveal">
+      <div class="section-header">
+        <span class="section-tag">04 — Skills</span>
+        <h2>What I work with</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h4><i class="fas fa-code"></i> Languages</h4>
+          <div class="skill-chips">
+            <span class="chip"><i class="fab fa-java"></i> Java</span>
+            <span class="chip"><i class="fab fa-python"></i> Python</span>
+            <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="" class="chip-icon"> Kotlin</span>
+            <span class="chip"><i class="fab fa-js-square"></i> JavaScript</span>
+            <span class="chip"><i class="fas fa-database"></i> SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4><i class="fas fa-globe"></i> Web</h4>
+          <div class="skill-chips">
+            <span class="chip"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="chip"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="chip"><i class="fab fa-js"></i> ES2022+</span>
+            <span class="chip"><i class="fab fa-chrome"></i> Chrome APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4><i class="fas fa-mobile-alt"></i> Mobile & Frameworks</h4>
+          <div class="skill-chips">
+            <span class="chip"><i class="fab fa-android"></i> Android Studio</span>
+            <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="" class="chip-icon"> Flutter</span>
+            <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="" class="chip-icon"> Streamlit</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4><i class="fas fa-server"></i> Tools & Databases</h4>
+          <div class="skill-chips">
+            <span class="chip"><i class="fab fa-git-alt"></i> Git &amp; GitHub</span>
+            <span class="chip"><i class="fas fa-database"></i> MySQL</span>
+            <span class="chip"><i class="fas fa-database"></i> ChromaDB</span>
+            <span class="chip"><i class="fas fa-brain"></i> Ango iMerit</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4><i class="fas fa-robot"></i> AI / ML</h4>
+          <div class="skill-chips">
+            <span class="chip"><i class="fas fa-microchip"></i> Groq API</span>
+            <span class="chip"><i class="fas fa-brain"></i> LLaMA 3.1</span>
+            <span class="chip"><i class="fas fa-search"></i> RAG Systems</span>
+            <span class="chip"><i class="fas fa-pen-nib"></i> Prompt Engineering</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects" class="section reveal">
+      <div class="section-header">
+        <span class="section-tag">05 — Projects</span>
+        <h2>Things I've built</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card featured">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-icon"><i class="fab fa-chrome"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/Sridevbaag/WordEase-chrome-extension" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="card-featured-tag">Featured</div>
+          <h3>WordEase</h3>
+          <p>Instant text translation Chrome Extension — select any word on any webpage and get a glassmorphism popup with translation, TTS, clipboard copy, history &amp; more. Built with Manifest V3, supports 20 languages with automatic fallback API.</p>
+          <div class="card-tags">
+            <span>JavaScript</span><span>Manifest V3</span><span>MyMemory API</span><span>Lingva API</span><span>Web Speech API</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-icon"><i class="fas fa-gamepad"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/Sridevbaag/number-guessing-game" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Number Guessing Game</h3>
+          <p>A polished Flutter application with difficulty levels, statistics tracking, smooth animations, and sound effects. Clean UI with persistent game state.</p>
+          <div class="card-tags">
+            <span>Flutter</span><span>Dart</span><span>Animations</span><span>Local Storage</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-icon"><i class="fas fa-flask"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/Sridevbaag" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Clinical Trial Assistant</h3>
+          <p>RAG-based AI assistant built on the Groq API (LLaMA 3.1 8B), ChromaDB and all-MiniLM-L6-v2. Answers analytical queries over an NSCLC dataset from ClinicalTrials.gov. Deployed on Streamlit Community Cloud.</p>
+          <div class="card-tags">
+            <span>Python</span><span>Groq API</span><span>RAG</span><span>ChromaDB</span><span>Streamlit</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="card-links">
+              <a href="https://github.com/Sridevbaag" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Student Result Management</h3>
+          <p>A desktop application to manage and display student academic results with a MySQL database backend. Supports CRUD operations, search, and report generation.</p>
+          <div class="card-tags">
+            <span>Java</span><span>MySQL</span><span>JDBC</span><span>Swing</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="section reveal">
+      <div class="section-header">
+        <span class="section-tag">06 — Contact</span>
+        <h2>Let's connect</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-left">
+          <p class="contact-intro">
+            I'm always open to interesting conversations, collaboration ideas, or
+            opportunities. Drop a message — I reply within 24 hours.
+          </p>
+          <div class="contact-items">
+            <a href="mailto:sridevbaag2@gmail.com" class="contact-item">
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="ci-label">Email</span>
+                <span class="ci-value">sridevbaag2@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://github.com/Sridevbaag" target="_blank" class="contact-item">
+              <div class="ci-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <span class="ci-label">GitHub</span>
+                <span class="ci-value">@Sridevbaag</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/sridev-bag" target="_blank" class="contact-item">
+              <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
+              <div>
+                <span class="ci-label">LinkedIn</span>
+                <span class="ci-value">sridev-bag</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="user_name">Name</label>
+              <input type="text"  id="user_name"  placeholder="Your name"  required />
+            </div>
+            <div class="form-group">
+              <label for="user_email">Email</label>
+              <input type="email" id="user_email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="What's on your mind…" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">
+            <span class="btn-text">Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <p id="form-status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
   <footer>
-    <p>© 2025 Sridev Bag | All Rights Reserved</p>
+    <div class="footer-inner">
+      <span class="footer-logo">{sridev.bag}</span>
+      <span class="footer-copy">© 2025 Sridev Bag — Kolkata, India</span>
+      <div class="footer-socials">
+        <a href="https://github.com/Sridevbaag" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sridev-bag" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:sridevbaag2@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
-
