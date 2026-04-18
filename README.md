@@ -2,7 +2,7 @@
 
 # `{ sridev.bag }`
 
-**BCA Student · Full Stack Developer · Chrome Extension Builder**
+**BCA Student · Full Stack Developer**
 
 [![Live Portfolio](https://img.shields.io/badge/🌐_Live_Portfolio-sridevbaag.github.io-f0a500?style=for-the-badge)](https://sridevbaag.github.io/)
 [![Last Commit](https://img.shields.io/github/last-commit/Sridevbaag/Sridevbaag.github.io?style=for-the-badge&color=00d4ff&logo=git&logoColor=white)](https://github.com/Sridevbaag/Sridevbaag.github.io/commits)
